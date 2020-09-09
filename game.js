@@ -5,10 +5,11 @@ clicks = [];
 iter = 0;
 
 $(document).on("keydown", function(e) {
-  if (gryb.length == 0) {
-    $("h1").text("SCORE: 100");
-    x(Math.floor(Math.random() * 4) + 1, "keyboard");
-  }
+  starter();
+});
+
+$(document).on("click", function(e) {
+  starter();
 });
 
 $(".btn").on("click", function(e) {
@@ -32,6 +33,13 @@ $(".btn").on("click", function(e) {
     }
   }
 });
+
+function starter() {
+  if (gryb.length == 0) {
+    $("h1").text("SCORE: 100");
+    x(Math.floor(Math.random() * 4) + 1, "keyboard");
+  }
+}
 
 function x(int, input = "mouse") {
   if (input == "keyboard") {
